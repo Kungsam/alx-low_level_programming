@@ -26,7 +26,7 @@ int_strlen_recursion(char *s)
 {
 	if (*s == '\0')
 		return (0);
-	return (1 + _strelen_recursion(s + 1));
+	return (1 + _strlen_recursion(s + 1));
 }
 /**
   * check_pal - checks the characters recursively or palindrome
