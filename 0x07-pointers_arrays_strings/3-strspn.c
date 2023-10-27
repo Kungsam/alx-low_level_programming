@@ -8,14 +8,14 @@
   */
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigmed int n = 0;
+	unsigned int n = 0;
 	int r;
 
 	while (*s)
 	{
 		for (r = 0; accept[r]; r++)
 		{
-			if (*s == accprt[r])
+			if (*s == accept[r])
 			{
 				n++;
 				break;
