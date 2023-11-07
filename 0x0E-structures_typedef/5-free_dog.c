@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#inlcude "dog.h"
+#include "dog.h"
 
 /**
   * free_dog - frees nnory allocated for a struct dog
