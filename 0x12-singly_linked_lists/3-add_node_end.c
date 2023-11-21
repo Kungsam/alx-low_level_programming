@@ -19,23 +19,37 @@ unsigned int _strlen(char *str)
 }
 
 /**
-* add_node - add a new node at beginning of a list_t list.
-* @head: head of a list_t list.
-* @str: value to insert into element.
-* Return: the number of nodes.
+* add_node_end - adds a new node to the end of linked list
+* @head: double pointer to a linked list
+* @str: string to add to the new node
+*
+* Return: pointer to the new node
 */
-list_t *add_node(list_t **head, const char *str)
+list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *add;
+	list_t *new, *tmp;
 
-	add = malloc(sizeof(list_t));
-	if (add == NULL)
+	if (str == NULL)
 		return (NULL);
-	add->str = strdup(str);
-
-	add->len = _strlen(str);
-	add->next = *head;
-	*head = add;
-
-	return (add);
+	new = malloc(sizeof(list_t));
+	if (new == NULL)
+		return (NULL);
+	new->str = strdup(str);
+	if (new->str == NULL)
+	{
+		free(new);
+		return (NULL);
+	}
+	new->len = _strlen(new->str);
+	new->next = NULL;
+	if (*head == NULL)
+	{
+		*head = new;
+		return (new);
+	}
+	tmp = *head;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = new;
+	return (new);
 }

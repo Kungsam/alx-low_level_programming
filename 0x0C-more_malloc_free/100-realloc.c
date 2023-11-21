@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdlib>
+#include <stdlib.h>
 /**
   * _realloc - reallocate a memory in the heap
   * @ptr: ofrmer pointer to the old memory allocated
@@ -36,4 +36,3 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	free(ptr);
 	return (p);
 }
-
